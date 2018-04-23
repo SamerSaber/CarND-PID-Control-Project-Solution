@@ -37,6 +37,14 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 
 Tips for setting up your environment can be found [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/23d376c7-0195-4276-bdf0-e02f1f3c665d)
 
+## Reflections
+
+* The P component of the controller is responsible for how quick we can reach the set point however this component alone causes oscillations, this oscillations increase with increasing the P gain.
+* The D component takes in considerations the speed of the error decreasing so it decreases the control with the rate of decreasing the error, in other words it somehow breaks the P component effect when the system approaches the set point.
+* The I component in most cases is responsible for vaniching the steady state error of the system, it saves the history of the past error and increase/decrease the controller value according to the accumaled error.
+
+* I tuned the PID hyper parameters manually by using only P component first and increasing it till we reach good performance but with a bit oscillations, then tuned the D component to vanich this oscillations.
+   
 ## Editor Settings
 
 We've purposefully kept editor configuration files out of this repo in order to
